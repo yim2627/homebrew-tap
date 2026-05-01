@@ -16,6 +16,15 @@ cask "barcode" do
 
   app "BarCode.app"
 
+  postflight do
+    # The app is ad-hoc signed (no Apple Developer ID), so macOS
+    # Gatekeeper would block it on first launch. Strip the quarantine
+    # attribute that brew sets so users don't have to bypass manually.
+    system_command "/usr/bin/xattr",
+                   args: ["-dr", "com.apple.quarantine", "#{appdir}/BarCode.app"],
+                   sudo: false
+  end
+
   zap trash: [
     "~/Library/Preferences/com.jiseong.BarCode.plist",
   ]
