@@ -1,6 +1,6 @@
 cask "barcode" do
-  version "0.2.2"
-  sha256 "9b43166680c677c3d94e307a737c0e1caec9137c14a60ba82fc4c047fba93531"
+  version "0.2.3"
+  sha256 "146a70c9f2bffccf230bd7c22a1dfdb91bd10926d417da53b55926ce92f0d54f"
 
   url "https://github.com/yim2627/BarCode/releases/download/v#{version}/BarCode.dmg"
   name "BarCode"
